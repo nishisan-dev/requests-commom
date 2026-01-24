@@ -28,7 +28,7 @@ import org.springframework.context.annotation.Configuration;
 @ConditionalOnProperty(
         name = "nishi.requests.common.enabled",  // O nome da propriedade
         havingValue = "true",                    // Só ative se o valor for "true"
-        matchIfMissing = false                    // ❗ ESSENCIAL: Se a propriedade não existir, considere como "true" (ativado por padrão)
+        matchIfMissing = true                    // ❗ ESSENCIAL: Se a propriedade não existir, considere como "true" (ativado por padrão)
 )
 public class NishiRequestsCommonAutoConfiguration {
     @Bean

@@ -45,7 +45,7 @@ Add the dependency to your build tool. Replace `1.2.12` with the most recent rel
 <dependency>
     <groupId>dev.nishisan</groupId>
     <artifactId>requests-common</artifactId>
-    <version>1.2.12</version>
+    <version>1.2.15</version>
 </dependency>
 ```
 
@@ -56,7 +56,7 @@ Add the dependency to your build tool. Replace `1.2.12` with the most recent rel
 
 ```kotlin
 dependencies {
-    implementation("dev.nishisan:requests-common:1.2.12")
+    implementation("dev.nishisan:requests-common:1.2.15")
 }
 ```
 
@@ -67,7 +67,7 @@ dependencies {
 
 ```groovy
 dependencies {
-    implementation 'dev.nishisan:requests-common:1.2.12'
+    implementation 'dev.nishisan:requests-common:1.2.15'
 }
 ```
 

@@ -99,16 +99,7 @@ public abstract class BasicException extends Exception implements Serializable, 
         this.statusCode = statusCode;
     }
 
-    @Override
-    public void printStackTrace() {
-        if (this.details != null) {
-            this.details.forEach((k, v) -> {
-                System.err.println("k: -> " + v);
-            });
 
-        }
-        super.printStackTrace();
-    }
 
     protected void addDetail(String key, Object value) {
         this.details.put(key, value);
