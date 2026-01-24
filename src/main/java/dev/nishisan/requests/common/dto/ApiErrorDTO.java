@@ -16,87 +16,88 @@
  */
 package dev.nishisan.requests.common.dto;
 
+import org.springframework.http.ProblemDetail;
+import java.net.URI;
+
 /**
  *
  * @author Lucas Nishimura < lucas at nishisan.dev >
  * @created 11.07.2023
  */
-public class ApiErrorDTO {
+public class ApiErrorDTO extends ProblemDetail {
 
-    private String msg;
-    private Integer statusCode = 500;
-    private String className = "";
-    private Object details;
-    private Object request;
+    public ApiErrorDTO() {
+        super(500); // Default status
+    }
 
     /**
      * @return the msg
      */
     public String getMsg() {
-        return msg;
+        return getDetail();
     }
 
     /**
      * @param msg the msg to set
      */
     public void setMsg(String msg) {
-        this.msg = msg;
+        setDetail(msg);
     }
 
     /**
      * @return the statusCode
      */
     public Integer getStatusCode() {
-        return statusCode;
+        return getStatus();
     }
 
     /**
      * @param statusCode the statusCode to set
      */
     public void setStatusCode(Integer statusCode) {
-        this.statusCode = statusCode;
+        setStatus(statusCode != null ? statusCode : 500);
     }
 
     /**
      * @return the className
      */
     public String getClassName() {
-        return className;
+        return (String) (getProperties() != null ? getProperties().get("className") : null);
     }
 
     /**
      * @param className the className to set
      */
     public void setClassName(String className) {
-        this.className = className;
+        setProperty("className", className);
     }
 
     /**
      * @param details the details to set
      */
     public void setDetails(Object details) {
-        this.details = details;
+        setProperty("details", details);
     }
 
     /**
      * @return the details
      */
     public Object getDetails() {
-        return details;
+        return getProperties() != null ? getProperties().get("details") : null;
     }
 
     /**
      * @return the request
      */
     public Object getRequest() {
-        return request;
+        return getProperties() != null ? getProperties().get("request") : null;
     }
 
     /**
      * @param request the request to set
      */
     public void setRequest(Object request) {
-        this.request = request;
+        setProperty("request", request);
     }
 
 }

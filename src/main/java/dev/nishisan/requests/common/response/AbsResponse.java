@@ -69,11 +69,11 @@ public abstract class AbsResponse<T> implements IResponse<T> {
     public AbsResponse(T payload) {
         this();
         this.payload = payload;
-        if (this.payload instanceof List list) {
+        if (this.payload instanceof List<?> list) {
             this.size = list.size();
-        } else if (this.payload instanceof Map map) {
+        } else if (this.payload instanceof Map<?,?> map) {
             this.size = map.size();
-        } else if (this.payload instanceof Page p) {
+        } else if (this.payload instanceof Page<?> p) {
             this.size = p.getSize();
             this.totalPages = p.getTotalPages();
         }
@@ -185,7 +185,7 @@ public abstract class AbsResponse<T> implements IResponse<T> {
     }
 
     public void setResponseHeaders(Map<String, String> responseHeaders) {
-        this.responseHeaders = responseHeaders == null ? null : new java.util.HashMap<>(responseHeaders);
+        this.responseHeaders = responseHeaders == null ? null : new ConcurrentHashMap<>(responseHeaders);
     }
 
     public long getSize() {

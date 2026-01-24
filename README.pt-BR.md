@@ -45,7 +45,7 @@ Adicione a dependência ao seu build. Substitua `1.2.12` pela versão mais recen
 <dependency>
     <groupId>dev.nishisan</groupId>
     <artifactId>requests-common</artifactId>
-    <version>1.2.12</version>
+    <version>1.2.15</version>
 </dependency>
 ```
 
@@ -56,7 +56,7 @@ Adicione a dependência ao seu build. Substitua `1.2.12` pela versão mais recen
 
 ```kotlin
 dependencies {
-    implementation("dev.nishisan:requests-common:1.2.12")
+    implementation("dev.nishisan:requests-common:1.2.15")
 }
 ```
 
@@ -67,7 +67,7 @@ dependencies {
 
 ```groovy
 dependencies {
-    implementation 'dev.nishisan:requests-common:1.2.12'
+    implementation 'dev.nishisan:requests-common:1.2.15'
 }
 ```
 
